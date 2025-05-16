@@ -1,53 +1,28 @@
-import { Badge, Box, Heading, Text, VStack } from '@chakra-ui/react';
-import Search from './shared/Search';
-
-const BADGES = [
-	'GoDaddy',
-	'Namecheap',
-	'Bluehost',
-	'Hostinger',
-	'Google Domains',
-];
+import { Box, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import React from 'react';
+import Filters from './Filters';
 
 const DomainSearch = () => {
 	return (
-		<VStack
-			as="section"
-			justifyContent="center"
-			alignItems="center"
-			bgGradient="to-b"
-			gradientFrom="white"
-			gradientTo="blue.50"
-			height="25rem"
-			textAlign="center"
-			spaceY={4}
-		>
-			<Heading as="h1" fontSize="2.7rem" fontWeight="bolder">
+		<Box width="full" lineHeight="2">
+			<Heading as="h2" fontSize="2xl" fontWeight="700">
 				Find Your Perfect Domain
 			</Heading>
-			<Text color="gray.700">
-				Search, buy, and sell domains across multiple providers in one place.
+			<Text fontSize="sm" color="gray.700">
+				Search across multiple providers to find available domains
 			</Text>
-			<Box width="35rem">
-				<Search />
-			</Box>
-			<Box spaceX={3}>
-				{BADGES.map((badge, index) => (
-					<Badge
-						key={index}
-						paddingInline="7px"
-						paddingBlock="4px"
-						borderRadius="md"
-						background="white"
-						color="black"
-						boxShadow="inset 0 0 0 1px #E2E8F0"
-						fontWeight={500}
-					>
-						{badge}
-					</Badge>
-				))}
-			</Box>
-		</VStack>
+
+			<Grid
+				templateColumns={{ base: '1fr', md: 'repeat(4, 1fr)' }}
+				gap={4}
+				marginTop={4}
+			>
+				<GridItem>
+					<Filters />
+				</GridItem>
+				<GridItem colSpan={3}>Col2</GridItem>
+			</Grid>
+		</Box>
 	);
 };
 

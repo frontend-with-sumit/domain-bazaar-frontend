@@ -18,7 +18,7 @@ const MainLayout = ({ children }) => {
 				zIndex={10}
 			>
 				<Container
-					paddingInline={{ base: 'auto', lg: 'spacing.8', md: 'spacing.6' }}
+					paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
 					marginInline="auto"
 					width="100%"
 					maxWidth="8xl"
@@ -35,11 +35,11 @@ const MainLayout = ({ children }) => {
 
 			<Box as="main">
 				<Container
-					paddingInline={{ base: '0', lg: 'spacing.8', md: 'spacing.6' }}
 					maxWidth="8xl"
 					width="100%"
 					position="relative"
 					marginInline="auto"
+					paddingInline={0}
 				>
 					{children}
 				</Container>

@@ -1,16 +1,24 @@
 import DomainSearch from '@/components/DomainSearch';
+import HeroSearch from '@/components/HeroSearch';
 import SegmentSlider from '@/components/shared/SegmentSlider';
 import MainLayout from '@/layouts/MainLayout';
-import { Box, SegmentGroup } from '@chakra-ui/react';
+import { Box, VStack } from '@chakra-ui/react';
 
 const SLIDER_ITEMS = ['Domain Search', 'Trending Domains'];
 const Home = () => {
 	return (
 		<MainLayout>
-			<DomainSearch />
-			<Box width="100%" textAlign="center" marginTop={10}>
-				<SegmentSlider items={SLIDER_ITEMS} />
-			</Box>
+			<HeroSearch />
+			<VStack
+				width="100%"
+				alignItems="center"
+				paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
+			>
+				<Box marginBlock={10}>
+					<SegmentSlider items={SLIDER_ITEMS} />
+				</Box>
+				<DomainSearch />
+			</VStack>
 		</MainLayout>
 	);
 };
