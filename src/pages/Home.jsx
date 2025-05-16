@@ -13,6 +13,7 @@ const Home = () => {
 				width="100%"
 				alignItems="center"
 				paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
+				paddingBlock={10}
 			>
 				<Box marginBlock={10}>
 					<SegmentSlider items={SLIDER_ITEMS} />

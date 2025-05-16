@@ -1,6 +1,7 @@
 import { Box, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 import Filters from './Filters';
+import DomainSearchForm from './DomainSearchForm';
 
 const DomainSearch = () => {
 	return (
@@ -20,7 +21,9 @@ const DomainSearch = () => {
 				<GridItem>
 					<Filters />
 				</GridItem>
-				<GridItem colSpan={3}>Col2</GridItem>
+				<GridItem colSpan={3}>
+					<DomainSearchForm />
+				</GridItem>
 			</Grid>
 		</Box>
 	);
