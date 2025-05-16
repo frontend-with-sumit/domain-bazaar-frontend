@@ -35,7 +35,7 @@ const MainLayout = ({ children }) => {
 
 			<Box as="main">
 				<Container
-					paddingInline={{ base: 'auto', lg: 'spacing.8', md: 'spacing.6' }}
+					paddingInline={{ base: '0', lg: 'spacing.8', md: 'spacing.6' }}
 					maxWidth="8xl"
 					width="100%"
 					position="relative"
