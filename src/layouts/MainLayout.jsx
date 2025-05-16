@@ -9,13 +9,11 @@ const MainLayout = ({ children }) => {
 				as="header"
 				justifyContent="center"
 				alignItems="center"
-				position="sticky"
-				top={0}
 				width="100%"
 				minHeight="64px"
 				borderBottom="1px solid"
 				borderColor="gray.200"
-				zIndex={10}
+				className="sticky top-0 z-10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 			>
 				<Container
 					paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}

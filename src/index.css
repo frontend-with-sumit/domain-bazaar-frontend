@@ -1,11 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-	--background: 0 0% 100%;
-	--foreground: 222.2 84% 4.9%;
-
 	--font-primary: 'Poppins';
-	--font-secondary: 'Inter';
 }
 
 @layer base {
@@ -19,4 +15,8 @@
 	body {
 		@apply bg-white text-black min-h-[100dvh] relative;
 	}
+}
+
+::selection {
+	@apply bg-green-300 text-black;
 }

@@ -13,10 +13,11 @@ const DomainSearchForm = () => {
 	};
 
 	return (
-		<Box as="section" width="full">
+		<Box as="section">
 			<Box
-				padding={10}
-				className="shadow-xs rounded-md border-1! border-gray-200!"
+				paddingBlock={10}
+				paddingInline={8}
+				className="shadow-xs rounded-xl border-1! border-gray-200!"
 			>
 				<Search value={searchTerm} onChange={(val) => setSearchTerm(val)} />
 			</Box>
