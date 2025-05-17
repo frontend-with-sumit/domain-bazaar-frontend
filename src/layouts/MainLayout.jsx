@@ -1,6 +1,8 @@
+import Copyright from '@/components/Copyright';
+import FooterNav from '@/components/FooterNav';
 import Navigation from '@/components/Navigation';
-import { Box, Container, Flex, HStack, Text } from '@chakra-ui/react';
-import { PiGlobeSimpleBold } from 'react-icons/pi';
+import Logo from '@/components/shared/Logo';
+import { Box, Container, Flex } from '@chakra-ui/react';
 
 const MainLayout = ({ children }) => {
 	return (
@@ -22,10 +24,7 @@ const MainLayout = ({ children }) => {
 					maxWidth="8xl"
 				>
 					<Flex justifyContent="space-between" alignItems="center">
-						<HStack alignItems="center">
-							<PiGlobeSimpleBold size={30} />
-							<Text fontWeight="700">DomainBazaar</Text>
-						</HStack>
+						<Logo />
 						<Navigation />
 					</Flex>
 				</Container>
@@ -42,6 +41,30 @@ const MainLayout = ({ children }) => {
 					{children}
 				</Container>
 			</Box>
+
+			<Flex
+				as="footer"
+				justifyContent="center"
+				alignItems="center"
+				width="100%"
+				minHeight="64px"
+				className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+				paddingBlock={5}
+			>
+				<Container
+					paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
+					marginInline="auto"
+					width="100%"
+					maxWidth="8xl"
+					textAlign="center"
+				>
+					<Flex justifyContent="space-between" alignItems="center">
+						<Logo />
+						<FooterNav />
+					</Flex>
+					<Copyright />
+				</Container>
+			</Flex>
 		</>
 	);
 };
