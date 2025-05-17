@@ -2,13 +2,17 @@ import DomainSearch from '@/components/DomainSearch';
 import HeroSearch from '@/components/HeroSearch';
 import SegmentSlider from '@/components/shared/SegmentSlider';
 import MainLayout from '@/layouts/MainLayout';
-import { Box, VStack } from '@chakra-ui/react';
+import { Badge, Box, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 
 const SLIDER_ITEMS = [
 	{ label: 'Domain Search', value: 'domain_search', disabled: false },
 	{
-		label: 'Trending Domains',
+		label: (
+			<Text>
+				Trending Domains <Badge>Upcoming</Badge>
+			</Text>
+		),
 		value: 'trending_domains',
 		disabled: true,
 	},
