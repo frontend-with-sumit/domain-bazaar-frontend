@@ -18,7 +18,7 @@ export function Provider(props) {
 			},
 		},
 	});
-  
+
 	return (
 		<ChakraProvider value={system}>
 			<ColorModeProvider {...props} />

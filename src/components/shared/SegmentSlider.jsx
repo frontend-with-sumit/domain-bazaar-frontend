@@ -1,24 +1,26 @@
 import { SegmentGroup } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
-const SegmentSlider = ({ items }) => {
-	const [content, setContent] = useState(items);
+const SegmentSlider = ({ items, initialValue, onUpdateControl }) => {
+	const [content] = useState(items);
+	// const [value] = useState(initialValue);
 
 	return (
 		<SegmentGroup.Root
-			background="blue.50"
+			className="bg-gray-200!"
 			padding="4px"
 			borderRadius="md"
-			defaultValue={content[0]}
+			value={initialValue}
+			onValueChange={(evt) => onUpdateControl(evt.value)}
 		>
 			<SegmentGroup.Indicator
 				background="white"
-				boxShadow="0 0 0 0.5px rgba(0, 0, 0, 0.1)"
+				className="shadow-xs!"
 				borderRadius="md"
 			/>
 			<SegmentGroup.Items
 				letterSpacing="wide"
-				color="gray.500"
+				className="text-gray-700!"
 				fontSize="xs"
 				fontWeight="500"
 				items={content}
