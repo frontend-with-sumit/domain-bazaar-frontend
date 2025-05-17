@@ -1,9 +1,8 @@
 import { SegmentGroup } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const SegmentSlider = ({ items, initialValue, onUpdateControl }) => {
 	const [content] = useState(items);
-	// const [value] = useState(initialValue);
 
 	return (
 		<SegmentGroup.Root

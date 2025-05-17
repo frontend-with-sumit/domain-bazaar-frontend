@@ -3,10 +3,20 @@ import HeroSearch from '@/components/HeroSearch';
 import SegmentSlider from '@/components/shared/SegmentSlider';
 import MainLayout from '@/layouts/MainLayout';
 import { Box, VStack } from '@chakra-ui/react';
+import { useState } from 'react';
 
-const SLIDER_ITEMS = ['Domain Search', 'Trending Domains'];
+const SLIDER_ITEMS = [
+	{ label: 'Domain Search', value: 'domain_search', disabled: false },
+	{
+		label: 'Trending Domains',
+		value: 'trending_domains',
+		disabled: true,
+	},
+];
 
 const Home = () => {
+	const [view, setView] = useState('domain_search');
+
 	return (
 		<MainLayout>
 			<HeroSearch />
@@ -17,7 +27,11 @@ const Home = () => {
 				paddingBlock={10}
 			>
 				<Box marginTop={3} marginBottom={8}>
-					<SegmentSlider items={SLIDER_ITEMS} />
+					<SegmentSlider
+						items={SLIDER_ITEMS}
+						initialValue={view}
+						onUpdateControl={setView}
+					/>
 				</Box>
 				<DomainSearch />
 			</VStack>
