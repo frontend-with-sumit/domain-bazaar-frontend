@@ -1,6 +1,7 @@
 import DomainSearch from '@/components/DomainSearch';
 import HeroSearch from '@/components/HeroSearch';
 import SegmentSlider from '@/components/shared/SegmentSlider';
+import WhyUs from '@/components/WhyUs';
 import MainLayout from '@/layouts/MainLayout';
 import { Badge, Box, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
@@ -39,6 +40,7 @@ const Home = () => {
 				</Box>
 				<DomainSearch />
 			</VStack>
+			<WhyUs />
 		</MainLayout>
 	);
 };
