@@ -2,6 +2,7 @@
 
 @theme {
 	--font-primary: 'Poppins';
+	--font-secondary: 'Inter';
 }
 
 @layer base {
