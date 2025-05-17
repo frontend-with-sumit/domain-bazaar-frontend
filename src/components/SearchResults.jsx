@@ -1,8 +1,9 @@
-import { Badge, Box, HStack, Text } from '@chakra-ui/react';
+import { Badge, Box, HStack, Show, Text, VStack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { IoGridSharp } from 'react-icons/io5';
 import { TbLayoutListFilled } from 'react-icons/tb';
 import SearchResultsView from './SearchResultsView';
+import NoData from './shared/NoData';
 import SegmentSlider from './shared/SegmentSlider';
 
 const domain = 'example';
@@ -82,43 +83,56 @@ const SearchResults = () => {
 		view: 'grid',
 		results: 'primary',
 	});
-	const [results, setResults] = useState(BASE_RESULTS);
+	const [results, setResults] = useState([]);
 
-	useEffect(() => {
-		setResults(
-			controls.results === 'primary' ? BASE_RESULTS : ALTERNATIVE_RESULTS
-		);
-	}, [controls.results]);
+	// useEffect(() => {
+	// 	setResults(
+	// 		controls.results === 'primary' ? BASE_RESULTS : ALTERNATIVE_RESULTS
+	// 	);
+	// }, [controls.results]);
 
 	const handleControls = (type, value) =>
 		setControls((prev) => ({ ...prev, [type]: value }));
 
 	return (
-		<Box
+		<VStack
+			height="40rem"
+			alignItems="initial"
 			border="1px solid"
 			paddingInline={10}
 			paddingBlock={4}
 			marginTop={4}
 			className="border-gray-200! rounded-xl"
+			spaceY={4}
 		>
-			<HStack justifyContent="space-between">
-				<Text fontWeight={600}>Search Results</Text>
-				<SegmentSlider
-					items={VIEW_CONTROL}
-					initialValue={controls.view}
-					onUpdateControl={(val) => handleControls('view', val)}
-				/>
-			</HStack>
+			<Show when={results.length}>
+				<HStack justifyContent="space-between">
+					<Text fontWeight={600}>Search Results</Text>
+					<Box maxW="20rem">
+						<SegmentSlider
+							items={VIEW_CONTROL}
+							initialValue={controls.view}
+							onUpdateControl={(val) => handleControls('view', val)}
+						/>
+					</Box>
+				</HStack>
 
-			<SegmentSlider
-				items={RESULT_CONTROL}
-				initialValue={controls.results}
-				onUpdateControl={(val) => handleControls('results', val)}
-			/>
+				<Box width="25rem" margin="0 auto">
+					<SegmentSlider
+						items={RESULT_CONTROL}
+						initialValue={controls.results}
+						onUpdateControl={(val) => handleControls('results', val)}
+					/>
+				</Box>
+			</Show>
 
 			{/* INFO: Here data will be as per the results control type */}
-			<SearchResultsView viewType={controls.view} data={results} />
-		</Box>
+			{!results.length ? (
+				<NoData />
+			) : (
+				<SearchResultsView viewType={controls.view} data={results} />
+			)}
+		</VStack>
 	);
 };
 
