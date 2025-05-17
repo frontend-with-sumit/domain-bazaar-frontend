@@ -1,3 +1,4 @@
+import DomainDetails from '@/components/DomainDetails';
 import DomainSearch from '@/components/DomainSearch';
 import HeroSearch from '@/components/HeroSearch';
 import SegmentSlider from '@/components/shared/SegmentSlider';
@@ -24,23 +25,30 @@ const Home = () => {
 
 	return (
 		<MainLayout>
-			<HeroSearch />
-			<VStack
-				width="100%"
-				alignItems="center"
-				paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
-				paddingBlock={10}
-			>
-				<Box marginTop={3} marginBottom={8}>
-					<SegmentSlider
-						items={SLIDER_ITEMS}
-						initialValue={view}
-						onUpdateControl={setView}
-					/>
-				</Box>
-				<DomainSearch />
-			</VStack>
-			<WhyUs />
+			{/* Home Route */}
+			<Box>
+				<HeroSearch />
+				<VStack
+					width="100%"
+					alignItems="center"
+					paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
+					paddingBlock={10}
+				>
+					<Box marginTop={3} marginBottom={8}>
+						<SegmentSlider
+							items={SLIDER_ITEMS}
+							initialValue={view}
+							onUpdateControl={setView}
+						/>
+					</Box>
+					<DomainSearch />
+				</VStack>
+				<WhyUs />
+			</Box>
+			{/* Domain Details */}
+			<Box>
+				<DomainDetails />
+			</Box>
 		</MainLayout>
 	);
 };

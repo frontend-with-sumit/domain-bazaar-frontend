@@ -6,7 +6,7 @@ import { Box, Container, Flex } from '@chakra-ui/react';
 
 const MainLayout = ({ children }) => {
 	return (
-		<>
+		<Box>
 			<Flex
 				as="header"
 				justifyContent="center"
@@ -48,7 +48,7 @@ const MainLayout = ({ children }) => {
 				alignItems="center"
 				width="100%"
 				minHeight="64px"
-				className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+				className="bg-white"
 				paddingBlock={5}
 			>
 				<Container
@@ -65,7 +65,7 @@ const MainLayout = ({ children }) => {
 					<Copyright />
 				</Container>
 			</Flex>
-		</>
+		</Box>
 	);
 };
 
