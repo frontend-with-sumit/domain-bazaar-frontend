@@ -1,7 +1,7 @@
 import { Box, Button, HStack, Input } from '@chakra-ui/react';
 import { BiSearch } from 'react-icons/bi';
 
-const Search = ({ value, onChange, placeholder }) => {
+const Search = ({ value, onChange, placeholder, onSearch }) => {
 	return (
 		<HStack>
 			<Input
@@ -16,7 +16,12 @@ const Search = ({ value, onChange, placeholder }) => {
 				value={value}
 				onChange={(evt) => onChange(evt.target.value)}
 			/>
-			<Button background="black" color="white" borderRadius="md">
+			<Button
+				background="black"
+				color="white"
+				borderRadius="md"
+				onClick={onSearch}
+			>
 				<BiSearch /> Search
 			</Button>
 		</HStack>

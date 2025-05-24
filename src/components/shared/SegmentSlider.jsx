@@ -6,7 +6,7 @@ const SegmentSlider = ({ items, initialValue, onUpdateControl }) => {
 
 	return (
 		<SegmentGroup.Root
-			width="100%"
+			width="full"
 			className="bg-gray-200!"
 			padding="4px"
 			borderRadius="md"
