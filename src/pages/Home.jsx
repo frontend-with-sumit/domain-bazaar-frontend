@@ -4,16 +4,17 @@ import HeroSearch from '@/components/HeroSearch';
 import SegmentSlider from '@/components/shared/SegmentSlider';
 import WhyUs from '@/components/WhyUs';
 import MainLayout from '@/layouts/MainLayout';
-import { Badge, Box, Text, VStack } from '@chakra-ui/react';
+import { Badge, Box, HStack, Text, VStack } from '@chakra-ui/react';
 import { useState } from 'react';
 
 const SLIDER_ITEMS = [
 	{ label: 'Domain Search', value: 'domain_search', disabled: false },
 	{
 		label: (
-			<Text>
-				Trending Domains <Badge>Upcoming</Badge>
-			</Text>
+			<HStack>
+				<Text>Trending Domains </Text>
+				<Badge>Upcoming</Badge>
+			</HStack>
 		),
 		value: 'trending_domains',
 		disabled: true,
@@ -34,7 +35,7 @@ const Home = () => {
 					paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
 					paddingBlock={10}
 				>
-					<Box marginTop={3} marginBottom={8}>
+					<Box marginTop={3} marginBottom={8} width="30rem">
 						<SegmentSlider
 							items={SLIDER_ITEMS}
 							initialValue={view}
@@ -46,9 +47,10 @@ const Home = () => {
 				<WhyUs />
 			</Box>
 			{/* Domain Details */}
-			<Box>
+			{/* TODO: enable this using routes */}
+			{/* <Box>
 				<DomainDetails />
-			</Box>
+			</Box> */}
 		</MainLayout>
 	);
 };

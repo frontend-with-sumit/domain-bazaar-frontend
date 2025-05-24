@@ -24,10 +24,9 @@ const Filters = () => {
 
 	return (
 		<VStack
-			className="shadow-sm rounded-xl"
+			className="border-gray-200! shadow-xs rounded-xl"
 			width="full"
 			border="1px solid"
-			borderColor="gray.200"
 			alignItems="flex-start"
 			padding={4}
 		>

@@ -7,6 +7,7 @@ import { Box, Container, Flex } from '@chakra-ui/react';
 const MainLayout = ({ children }) => {
 	return (
 		<Box>
+			{/* Navbar */}
 			<Flex
 				as="header"
 				justifyContent="center"
@@ -30,6 +31,7 @@ const MainLayout = ({ children }) => {
 				</Container>
 			</Flex>
 
+			{/* Main Content */}
 			<Box as="main">
 				<Container
 					maxWidth="8xl"
@@ -42,6 +44,7 @@ const MainLayout = ({ children }) => {
 				</Container>
 			</Box>
 
+			{/* Footer */}
 			<Flex
 				as="footer"
 				justifyContent="center"
