@@ -34,6 +34,7 @@ const MainLayout = ({ children }) => {
 			{/* Main Content */}
 			<Box as="main">
 				<Container
+					minH="80dvh"
 					maxWidth="8xl"
 					width="100%"
 					position="relative"
@@ -52,7 +53,8 @@ const MainLayout = ({ children }) => {
 				width="100%"
 				minHeight="64px"
 				className="bg-white"
-				paddingBlock={5}
+				paddingTop={4.5}
+				paddingBottom={2}
 			>
 				<Container
 					paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
