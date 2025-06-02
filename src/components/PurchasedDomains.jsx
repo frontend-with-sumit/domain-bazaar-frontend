@@ -1,6 +1,7 @@
 import { Box, Heading, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 import DomainTable from './DomainTable';
+import SectionHeading from './shared/SectionHeading';
 
 const ITEMS = [
 	{
@@ -37,14 +38,10 @@ const PurchasedDomains = () => {
 			padding={4}
 			className="border-gray-200! shadow-md"
 		>
-			<Box width="full">
-				<Heading as="h3" fontWeight="600" marginBottom="5px">
-					Your Purchased Domains
-				</Heading>
-				<Text fontSize="md" fontWeight="500" className="text-gray-600">
-					Manage domains that you currently own.
-				</Text>
-			</Box>
+			<SectionHeading
+				heading="Your Purchased Domains"
+				description="Manage domains that you currently own"
+			/>
 
 			<DomainTable items={ITEMS} />
 		</VStack>
