@@ -36,21 +36,23 @@ const Footer = () => {
 			<Button
 				bg="white"
 				variant="outline"
-				size="xs"
+				size="sm"
 				color="black"
 				borderRadius="md"
+				fontWeight="medium"
 				_hover={{ color: 'white', bg: 'black' }}
 			>
 				<IoDocumentTextOutline />
 				<Text>Save as Draft</Text>
 			</Button>
 			<Button
-				size="xs"
+				size="sm"
 				borderRadius="md"
 				className="disabled:bg-gray-700! disabled:text-white!"
 				bg="black"
 				color="white"
 				disabled
+				fontWeight="bold"
 			>
 				<PiUploadSimple /> <Text>Publish Listing</Text>
 			</Button>
