@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import SellDomainForm from './SellDomainForm';
 import Sections from './shared/Sections';
 import SegmentSlider from './shared/SegmentSlider';
+import CustomBtnOutline from './shared/CustomBtnOutline';
 
 const ITEMS = [
 	{ label: 'Domain Details', value: 'domain_details' },
@@ -52,18 +53,11 @@ const Header = () => {
 const Footer = ({ isDisabled, submitForm }) => {
 	return (
 		<HStack padding={4} justifyContent="space-between">
-			<Button
-				bg="white"
-				variant="outline"
-				size="sm"
-				color="black"
-				borderRadius="md"
-				fontWeight="medium"
-				_hover={{ color: 'white', bg: 'black' }}
-			>
-				<IoDocumentTextOutline />
-				<Text>Save as Draft</Text>
-			</Button>
+			<CustomBtnOutline
+				icon={<IoDocumentTextOutline />}
+				title="Save as Draft"
+			/>
+
 			<Button
 				size="sm"
 				borderRadius="md"

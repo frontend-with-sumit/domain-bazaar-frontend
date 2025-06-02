@@ -11,6 +11,7 @@ import React from 'react';
 import { PiPencilSimpleFill } from 'react-icons/pi';
 import defaultAvatar from '@/assets/images/avatar.jpg';
 import CustomInfo from './shared/CustomInfo';
+import CustomBtnOutline from './shared/CustomBtnOutline';
 
 const UserInfo = () => {
 	return (
@@ -27,15 +28,11 @@ const UserInfo = () => {
 				<Heading as="h6" size="md">
 					Profile
 				</Heading>
-				<Button
-					variant="outline"
+				<CustomBtnOutline
 					size="xs"
-					color="black"
-					className="border-gray-200!"
-					_hover={{ bg: 'black', color: 'gray.200' }}
-				>
-					<PiPencilSimpleFill /> <Text fontWeight={600}>Edit</Text>
-				</Button>
+					icon={<PiPencilSimpleFill />}
+					title="Edit"
+				/>
 			</Flex>
 			<VStack spaceY={2}>
 				<Image

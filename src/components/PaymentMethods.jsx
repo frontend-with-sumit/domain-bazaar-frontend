@@ -1,6 +1,7 @@
 import { Button, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
-import { PiPlus } from 'react-icons/pi';
+import { PiPlus, PiPlusBold } from 'react-icons/pi';
+import CustomBtnOutline from './shared/CustomBtnOutline';
 
 const PaymentMethods = () => {
 	return (
@@ -17,17 +18,8 @@ const PaymentMethods = () => {
 				<Heading as="h6" size="md">
 					Payment Methods
 				</Heading>
-				<Button
-					variant="outline"
-					size="xs"
-					color="black"
-					className="border-gray-200!"
-					_hover={{ bg: 'black', color: 'gray.200' }}
-				>
-					<PiPlus /> <Text fontWeight={600}>Add New</Text>
-				</Button>
+				<CustomBtnOutline size="xs" icon={<PiPlusBold />} title="Add New" />
 			</Flex>
-            
 		</VStack>
 	);
 };
