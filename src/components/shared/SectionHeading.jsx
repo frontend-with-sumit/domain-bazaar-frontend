@@ -3,7 +3,7 @@ import React from 'react';
 
 const SectionHeading = ({ heading, description }) => {
 	return (
-		<Box>
+		<Box width="full">
 			<Heading as="h2" fontSize="2xl" fontWeight="700">
 				{heading}
 			</Heading>
