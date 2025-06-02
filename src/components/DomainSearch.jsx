@@ -2,16 +2,15 @@ import { Box, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 import Filters from './Filters';
 import DomainSearchForm from './DomainSearchForm';
+import SectionHeading from './shared/SectionHeading';
 
 const DomainSearch = () => {
 	return (
 		<Box width="full" lineHeight="2">
-			<Heading as="h2" fontSize="2xl" fontWeight="700">
-				Find Your Perfect Domain
-			</Heading>
-			<Text fontSize="sm" color="gray.700">
-				Search across multiple providers to find available domains
-			</Text>
+			<SectionHeading
+				heading="Find Your Perfect Domain"
+				description="Search across multiple providers to find available domains"
+			/>
 
 			<Grid
 				templateColumns={{ base: '1fr', md: 'repeat(4, 1fr)' }}
