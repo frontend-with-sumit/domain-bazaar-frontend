@@ -53,8 +53,11 @@ const MainLayout = ({ children }) => {
 				width="100%"
 				minHeight="64px"
 				className="bg-white"
-				paddingTop={4.5}
+				paddingTop={4}
 				paddingBottom={2}
+				marginTop={2}
+				borderTop="1px solid"
+				borderColor="gray.200"
 			>
 				<Container
 					paddingInline={{ base: '1rem', lg: '2rem', md: '1.5rem' }}
