@@ -1,3 +1,4 @@
+import DraftsListing from '@/components/DraftsListing';
 import ListedDomains from '@/components/ListedDomains';
 import PaymentMethods from '@/components/PaymentMethods';
 import PurchasedDomains from '@/components/PurchasedDomains';
@@ -10,13 +11,14 @@ import React, { useState } from 'react';
 const DOMAIN_CONTROL = [
 	{
 		label: 'Purchased Domains',
-		value: 'purchased-domains',
+		value: 'purchased_domains',
 	},
-	{ label: 'Listed Domains', value: 'listed-domains' },
+	{ label: 'Listed Domains', value: 'listed_domains' },
+	{ label: 'Drafts Listing', value: 'drafts_listing' },
 ];
 
 const Profile = () => {
-	const [currentView, setCurrentView] = useState('purchased-domains');
+	const [currentView, setCurrentView] = useState('purchased_domains');
 
 	return (
 		<MainLayout>
@@ -39,8 +41,9 @@ const Profile = () => {
 							initialValue={currentView}
 							onUpdateControl={(val) => setCurrentView(val)}
 						/>
-						{currentView === 'purchased-domains' && <PurchasedDomains />}
-						{currentView === 'listed-domains' && <ListedDomains />}
+						{currentView === 'purchased_domains' && <PurchasedDomains />}
+						{currentView === 'listed_domains' && <ListedDomains />}
+						{currentView === 'drafts_listing' && <DraftsListing />}
 					</VStack>
 				</GridItem>
 			</Grid>
