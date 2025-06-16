@@ -1,11 +1,11 @@
-import { Badge, Box, Button, Flex, Table } from '@chakra-ui/react';
-import React from 'react';
+import { Button, Flex, Table } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
-const renderActions = (onEdit, onDelete) => {
+const renderActions = ({ id, onEdit, onDelete }) => {
 	return (
 		<Flex justifyContent="center" gap={4} alignItems="center">
 			<Button _hover={{ textDecoration: 'underline' }} onClick={onEdit}>
-				Edit
+				<Link to={`/sell-domain/${id}/edit`}>Edit</Link>
 			</Button>
 			<Button _hover={{ textDecoration: 'underline' }} onClick={onDelete}>
 				Delete
@@ -14,7 +14,7 @@ const renderActions = (onEdit, onDelete) => {
 	);
 };
 
-const DomainTable = ({ table }) => {
+const DraftsTable = ({ table }) => {
 	const { columns, data } = table;
 
 	return (
@@ -54,29 +54,16 @@ const DomainTable = ({ table }) => {
 								{item.domain_name}
 							</Table.Cell>
 							<Table.Cell fontWeight="500" className="border-gray-200!">
-								{item.registrar}
+								{item.last_saved}
 							</Table.Cell>
 							<Table.Cell fontWeight="500" className="border-gray-200!">
-								{item.expiry_date}
+								{item.price}
 							</Table.Cell>
 							<Table.Cell fontWeight="500" className="border-gray-200!">
-								{item.auto_renew ? (
-									<Badge>{item.auto_renew ? 'Enabled' : 'Disabled'}</Badge>
-								) : (
-									<Badge
-										variant="subtle"
-										bg="white"
-										color="black"
-										border="1px solid"
-										className="border-gray-200!"
-										fontWeight="600"
-									>
-										{item.auto_renew ? 'Enabled' : 'Disabled'}
-									</Badge>
-								)}
+								{item.category}
 							</Table.Cell>
 							<Table.Cell textAlign="center" className="border-gray-200!">
-								{renderActions()}
+								{renderActions({ id: item?.id })}
 							</Table.Cell>
 						</Table.Row>
 					))}
@@ -86,4 +73,4 @@ const DomainTable = ({ table }) => {
 	);
 };
 
-export default DomainTable;
+export default DraftsTable;

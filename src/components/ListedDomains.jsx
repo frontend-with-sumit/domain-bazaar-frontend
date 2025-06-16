@@ -6,19 +6,24 @@ import SectionHeading from './shared/SectionHeading';
 const ITEMS = [
 	{
 		id: 1,
-		domainName: 'exmple.com',
+		domain_name: 'exmple.com',
 		registrar: 'GoDaddy',
-		expiryDate: '2024-12-31',
-		autoRenew: true,
+		expiry_date: '2024-12-31',
+		auto_renew: true,
 	},
 	{
 		id: 2,
-		domainName: 'mywebsite.org',
+		domain_name: 'mywebsite.org',
 		registrar: 'NameCheap',
-		expiryDate: '2027-2-12',
-		autoRenew: false,
+		expiry_date: '2027-2-12',
+		auto_renew: false,
 	},
 ];
+
+const TABLE_DATA = {
+	columns: ['Domain Name', 'Registrar', 'Expiry Date', 'Auto Renew'],
+	data: ITEMS,
+};
 
 const ListedDomains = () => {
 	return (
@@ -36,7 +41,7 @@ const ListedDomains = () => {
 				description="Manage domains that you have listed for sale."
 			/>
 
-			<DomainTable items={ITEMS} />
+			<DomainTable table={TABLE_DATA} />
 		</VStack>
 	);
 };

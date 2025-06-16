@@ -3,29 +3,35 @@ import React from 'react';
 import DomainTable from './DomainTable';
 import SectionHeading from './shared/SectionHeading';
 
+// NOTE: Separate column name using underscores
 const ITEMS = [
 	{
 		id: 1,
-		domainName: 'exmple.com',
+		domain_name: 'exmple.com',
 		registrar: 'GoDaddy',
-		expiryDate: '2024-12-31',
-		autoRenew: true,
+		expiry_date: '2024-12-31',
+		auto_renew: true,
 	},
 	{
 		id: 2,
-		domainName: 'mywebsite.org',
+		domain_name: 'mywebsite.org',
 		registrar: 'NameCheap',
-		expiryDate: '2027-2-12',
-		autoRenew: false,
+		expiry_date: '2027-2-12',
+		auto_renew: false,
 	},
 	{
 		id: 3,
-		domainName: 'businessdomain.net',
+		domain_name: 'businessdomain.net',
 		registrar: 'Bluehost',
-		expiryDate: '2024-10-22',
-		autoRenew: true,
+		expiry_date: '2024-10-22',
+		auto_renew: true,
 	},
 ];
+
+const TABLE_DATA = {
+	columns: ['Domain Name', 'Registrar', 'Expiry Date', 'Auto Renew', 'Actions'],
+	data: ITEMS,
+};
 
 const PurchasedDomains = () => {
 	return (
@@ -43,7 +49,7 @@ const PurchasedDomains = () => {
 				description="Manage domains that you currently own"
 			/>
 
-			<DomainTable items={ITEMS} />
+			<DomainTable table={TABLE_DATA} />
 		</VStack>
 	);
 };

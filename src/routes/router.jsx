@@ -11,6 +11,7 @@ const router = createBrowserRouter([
 	},
 	{ path: '/marketplace', element: <Marketplace /> },
 	{ path: '/sell-domain', element: <SellDomain /> },
+	{ path: '/sell-domain/:id/edit', element: <SellDomain /> },
 	{ path: '/profile', element: <Profile /> },
 
 	// Redirect root path to /dashboard
